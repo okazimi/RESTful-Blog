@@ -112,7 +112,7 @@ def admin_only(f):
 
 
 # HOME PAGE
-@app.route('/home')
+@app.route('/')
 def get_all_posts():
     # QUERY DATABASE FOR ALL BLOG POST
     posts = BlogPost.query.all()
