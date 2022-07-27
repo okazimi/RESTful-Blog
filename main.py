@@ -15,8 +15,7 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 # INITIALIZE FLASK APP
 app = Flask(__name__)
 # CONFIGURE APPLICATION SECRET KEY
-# SECRET_KEY = os.environ.get("KEY")
-app.config['SECRET_KEY'] = "a random secret key"
+app.config['SECRET_KEY'] = os.environ.get("KEY")
 # INITIALIZE CKEDITOR FOR APPLICATION
 ckeditor = CKEditor(app)
 # INTIALIZE BOOTSTRAP FOR APPLICATION
@@ -27,7 +26,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
