@@ -15,8 +15,8 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 # INITIALIZE FLASK APP
 app = Flask(__name__)
 # CONFIGURE APPLICATION SECRET KEY
-SECRET_KEY = os.environ.get("KEY")
-app.config['SECRET_KEY'] = SECRET_KEY
+# SECRET_KEY = os.environ.get("KEY")
+app.config['SECRET_KEY'] = "a random secret key"
 # INITIALIZE CKEDITOR FOR APPLICATION
 ckeditor = CKEditor(app)
 # INTIALIZE BOOTSTRAP FOR APPLICATION
